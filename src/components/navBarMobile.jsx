@@ -7,7 +7,7 @@ import CartIcon from '../assets/icon-cart.svg';
 import AvatarImg from '../assets/image-avatar.png';
 import CloseIcon from '../assets/icon-close.svg';
 
-function NavBar() {
+function NavBarMobile() {
     const [showMenu, setShowMenu] = useState(false);
 
     function openMenu() {
@@ -57,4 +57,4 @@ function NavBar() {
     )
 }
 
-export default NavBar;
+export default NavBarMobile;
