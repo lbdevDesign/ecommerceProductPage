@@ -3,9 +3,9 @@ const productData = {
     brand: "Sneaker Company",
     title: "Fall limited edition sneakers",
     description: "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
-    price: 250.00,
+    price: 250,
     promotion: "50",
-    promPrice: 125.00,
+    promPrice: 125,
     img: [
         {
             id: 1,
