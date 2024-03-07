@@ -25,7 +25,7 @@ function Caroussel(props) {
     }
     
     return(
-        <div className="w-screen relative">
+        <div className="w-screen relative z-0">
             <img src={imgShownPath} alt="Product picture"/>
             <button onClick={prevIndex} className="absolute top-1/2 left-4 w-12 h-12 text-center bg-white rounded-full" >
                 <img src={previousIcon} className="m-auto" alt="Previous"/>

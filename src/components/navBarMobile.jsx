@@ -34,7 +34,7 @@ function NavBarMobile() {
                 </a>
             </div>
             {showMenu && (
-                <div className="absolute top-0 h-screen w-screen">
+                <div className="absolute top-0 h-screen w-screen z-50">
                     <div className="absolute top-0 h-screen w-screen bg-black opacity-75"></div>
                     <div className="absolute top-0 bottom-0 w-2/3 bg-white p-8 text flex flex-col items-start">
                         <button onClick={() => openMenu()} className="h-11 w-11 flex justify-start items-center">
