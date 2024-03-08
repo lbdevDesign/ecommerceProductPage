@@ -1,20 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 
 //assets
-import BurgerIcon from '../assets/icon-menu.svg';
 import LogoImg from '../assets/logo.svg';
 import CartIcon from '../assets/icon-cart.svg';
 import AvatarImg from '../assets/image-avatar.png';
-import CloseIcon from '../assets/icon-close.svg';
 
 function NavBarDesktop() {
-    const [showMenu, setShowMenu] = useState(false);
-
-    function openMenu() {
-        setShowMenu(!showMenu);
-        console.log(showMenu);
-    }
-
+    
     return(
         <div className="w-auto py-6 px-4 flex items-center justify-between bg-white border-b">
             <div className="flex items-center">
