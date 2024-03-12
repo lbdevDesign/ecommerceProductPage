@@ -18,8 +18,10 @@ function App() {
     <div className="max-w-screen-lg mx-auto">
       {mobile && <NavBarMobile /> }
       {desktop && <NavBarDesktop /> }
-      <Caroussel data={productData} />
-      <ProductInfo data={productData} />
+      <div className="md:flex md:items-center md:justify-center">
+        <Caroussel data={productData} />
+        <ProductInfo data={productData} />
+      </div>
     </div>
   );
 }
