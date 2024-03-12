@@ -47,7 +47,9 @@ function Caroussel(props) {
             )}
             {desktop && (
                 <div className="w-full">
-                    <img src={imgShownPath} alt={`Product ${imgIndex + 1}`} className="rounded-2xl"/>
+                    <button onClick={props.showLightbox}>
+                        <img src={imgShownPath} alt={`Product ${imgIndex + 1}`} className="rounded-2xl" />
+                    </button>
                     <div className="mt-3 flex">
                         {props.data.img.map((button, index) => {
                             if (index === imgIndex) {
