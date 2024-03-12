@@ -36,7 +36,7 @@ function AmountSelect() {
                     onClick={addProduct}
                     alt="Add one" />
             </div>
-            <button className="w-full md:w-1/1 md:mb-0 flex justify-center items-center py-3 mb-11 rounded-lg bg-orange-default shadow-[0px_5px_20px_5px_#ffd4b3]">
+            <button className="w-full md:w-1/1 md:mb-0 flex justify-center items-center py-3 mb-11 rounded-lg bg-orange-default hover:shadow-[0px_5px_20px_5px_#ffd4b3]">
                 <img 
                 src={cartIcon} 
                 className="h-4 mr-4"
