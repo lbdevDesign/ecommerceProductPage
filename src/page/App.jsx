@@ -27,12 +27,28 @@ function App() {
     setItemsInCart(itemsInCart + amount)
   }
 
+  function deleteCart() {
+    setItemsInCart(0);
+  }
+
   console.log(itemsInCart);
 
   return (
     <div className="max-w-screen-lg mx-auto">
-      {mobile && <NavBarMobile itemsInCart={itemsInCart}/> }
-      {desktop && <NavBarDesktop itemsInCart={itemsInCart}/> }
+      {mobile && 
+        <NavBarMobile 
+          itemsInCart={itemsInCart} 
+          data={productData}
+          deleteCart={deleteCart}
+        /> 
+      }
+      {desktop && 
+        <NavBarDesktop 
+          itemsInCart={itemsInCart} 
+          data={productData}
+          deleteCart={deleteCart}
+        /> 
+      }
       <div className="md:flex md:items-center md:justify-center">
         <Caroussel data={productData} showLightbox={toggleLightbox}/>
         <div className="py-8 px-6 md:max-w-md md:p-12">
