@@ -31,7 +31,7 @@ function App() {
 
   return (
     <div className="max-w-screen-lg mx-auto">
-      {mobile && <NavBarMobile /> }
+      {mobile && <NavBarMobile itemsInCart={itemsInCart}/> }
       {desktop && <NavBarDesktop itemsInCart={itemsInCart}/> }
       <div className="md:flex md:items-center md:justify-center">
         <Caroussel data={productData} showLightbox={toggleLightbox}/>
