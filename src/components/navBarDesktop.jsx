@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 //assets
 import LogoImg from '../assets/logo.svg';
 import CartIcon from '../assets/icon-cart.svg';
 import AvatarImg from '../assets/image-avatar.png';
 
-function NavBarDesktop() {
-    
+function NavBarDesktop(props) {
+   
     return(
         <div className="w-auto py-6 px-4 flex items-center justify-between bg-white border-b">
             <div className="flex items-center">
@@ -25,8 +25,13 @@ function NavBarDesktop() {
 
             </div>
             <div className="flex items-center mr-2">
-                <a href="#" className="h-11 w-11 flex justify-center items-center">
+                <a href="#" className="h-11 w-11 flex justify-center items-center relative">
                     <img src={CartIcon} alt="cart" className="h-5" />
+                    {props.itemsInCart > 0 && (
+                        <section className="bg-orange-default px-1 rounded-full absolute top-0 right-0">
+                            <p className="text-white text-xs font-semibold">{props.itemsInCart}</p>
+                        </section>
+                    )}
                 </a>
                 <a href="#" className="h-11 w-11 flex justify-center items-center">
                     <img src={AvatarImg} alt="profile" className="h-10 ml-8" />

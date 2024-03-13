@@ -5,7 +5,7 @@ import plusIcon from "../assets/icon-plus.svg";
 import minusIcon from "../assets/icon-minus.svg";
 import cartIcon from "../assets/icon-cart-white.svg";
 
-function AmountSelect() {
+function AmountSelect({ updateCartItems }) {
     const [amount, setAmount] = useState(1);
 
     function addProduct() {
@@ -22,6 +22,10 @@ function AmountSelect() {
         })
     }
 
+    function addProductToCart() {
+        updateCartItems(amount);
+        setAmount(1);
+    }
 
     return(
         <div className="md:flex">
@@ -36,7 +40,10 @@ function AmountSelect() {
                     onClick={addProduct}
                     alt="Add one" />
             </div>
-            <button className="w-full md:w-1/1 md:mb-0 flex justify-center items-center py-3 mb-11 rounded-lg bg-orange-default hover:shadow-[0px_5px_20px_5px_#ffd4b3]">
+            <button 
+                className="w-full md:w-1/1 md:mb-0 flex justify-center items-center py-3 mb-11 rounded-lg bg-orange-default hover:shadow-[0px_5px_20px_5px_#ffd4b3]"
+                onClick={addProductToCart}
+            >
                 <img 
                 src={cartIcon} 
                 className="h-4 mr-4"

@@ -1,11 +1,10 @@
 import React from "react";
 
 //component
-import AmountSelect from "./amountSelect";
 
 function ProductInfo(props) {
     return(
-        <div className="py-8 px-6 md:max-w-md md:p-12">
+        <div>
             <h2 className="text-orange-default uppercase text-sm font-semibold mb-4">{props.data.brand}</h2>
             <h1 className="text-neutral-very-dark-blue capitalize font-bold text-3xl mb-4">{props.data.title}</h1>
             <p className="text-neutral-dark-grayish-blue text-sm mb-6">{props.data.description}</p>
@@ -16,7 +15,6 @@ function ProductInfo(props) {
                 </section> 
                 <p className="text-neutral-grayish-blue text-lg font-bold line-through">${props.data.price.toFixed(2)}</p>
             </section>
-            <AmountSelect />
         </div>
     )
 }
