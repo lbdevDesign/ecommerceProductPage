@@ -23,20 +23,20 @@ function NavBarDesktop(props) {
                 </a>
                 <nav className="h-full">
                     <ul className="ml-8 flex h-full">
-                        <li className="mx-4 flex items-center h-full hover:border-b-2 border-orange-default">
-                            <a href="#"><h3 className="text-slate-500">Collections</h3></a>
+                        <li className="mx-4 flex items-center h-full hover:border-b-2 border-orange-default group">
+                            <a href="#"><h3 className="text-slate-500 tracking-wide group-hover:font-semibold group-hover:tracking-normal">Collections</h3></a>
                         </li>
-                        <li className="mx-4 flex items-center h-full hover:border-b-2 border-orange-default">
-                            <a href="#"><h3 className="text-slate-500">Men</h3></a>
+                        <li className="mx-4 flex items-center h-full hover:border-b-2 border-orange-default group">
+                            <a href="#"><h3 className="text-slate-500 tracking-wide group-hover:font-semibold group-hover:tracking-normal">Men</h3></a>
                         </li>
-                        <li className="mx-4 flex items-center h-full hover:border-b-2 border-orange-default">
-                            <a href="#"><h3 className="text-slate-500">Women</h3></a>
+                        <li className="mx-4 flex items-center h-full hover:border-b-2 border-orange-default group">
+                            <a href="#"><h3 className="text-slate-500 tracking-wide group-hover:font-semibold group-hover:tracking-normal">Women</h3></a>
                         </li>
-                        <li className="mx-4 flex items-center h-full hover:border-b-2 border-orange-default">
-                            <a href="#"><h3 className="text-slate-500">About</h3></a>
+                        <li className="mx-4 flex items-center h-full hover:border-b-2 border-orange-default group">
+                            <a href="#"><h3 className="text-slate-500 tracking-wide group-hover:font-semibold group-hover:tracking-normal">About</h3></a>
                         </li>
-                        <li className="mx-4 flex items-center h-full hover:border-b-2 border-orange-default">
-                            <a href="#"><h3 className="text-slate-500">Contact</h3></a>
+                        <li className="mx-4 flex items-center h-full hover:border-b-2 border-orange-default group">
+                            <a href="#"><h3 className="text-slate-500 tracking-wide group-hover:font-semibold group-hover:tracking-normal">Contact</h3></a>
                         </li>
                     </ul>
                 </nav>
@@ -74,7 +74,7 @@ function NavBarDesktop(props) {
                         </div>
                     }
                 </button>
-                <a href="#" className="h-11 w-11 flex justify-center items-center">
+                <a href="#" className="h-11 w-11 flex justify-center items-center rounded-full">
                     <img src={AvatarImg} alt="profile" className="h-10 ml-8" />
                 </a>
             </div>
