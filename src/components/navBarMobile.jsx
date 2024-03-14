@@ -6,13 +6,19 @@ import LogoImg from '../assets/logo.svg';
 import CartIcon from '../assets/icon-cart.svg';
 import AvatarImg from '../assets/image-avatar.png';
 import CloseIcon from '../assets/icon-close.svg';
+import deleteIcon from '../assets/icon-delete.svg';
 
 function NavBarMobile(props) {
     const [showMenu, setShowMenu] = useState(false);
+    const [showCart, setShowCart] = useState(false);
 
     function openMenu() {
         setShowMenu(!showMenu);
         console.log(showMenu);
+    }
+
+    function toggleCart() {
+        setShowCart(!showCart);
     }
 
     return(
@@ -26,14 +32,14 @@ function NavBarMobile(props) {
                 </a>
             </div>
             <div className="flex items-center mr-2">
-                <a href="#" className="h-11 w-11 flex justify-center items-center relative">
+                <button className="h-11 w-11 flex justify-center items-center relative" onClick={toggleCart}>
                     <img src={CartIcon} alt="cart" className="h-5" />
                     {props.itemsInCart > 0 && (
                         <section className="bg-orange-default px-1 rounded-full absolute top-0 right-0">
                             <p className="text-white text-xs font-semibold">{props.itemsInCart}</p>
                         </section>
                     )}
-                </a>
+                </button>
                 <a href="#" className="h-11 w-11 flex justify-center items-center">
                     <img src={AvatarImg} alt="profile" className="h-8" />
                 </a>
@@ -57,6 +63,29 @@ function NavBarMobile(props) {
                     </div>
                 </div>
             )}
+            {showCart && props.itemsInCart > 0 && 
+                        <div className="absolute z-10 top-16 left-1/2 -translate-x-1/2 pointer-events-none bg-white rounded-lg w-11/12 p-4 shadow-[rgba(0,_0,_0,_0.25)_0px_25px_50px_-12px] ">
+                            <h3 className="font-semibold text-sm pb-4 mb-4 w-full border-b">Cart</h3>
+                            <div className="flex items-center mb-4">
+                                <img src={props.data.img[0].path} alt="product" className="h-10 rounded mr-2" />
+                                <div className="mr-auto">
+                                    <p className="text-xs capitalize text-neutral-dark-grayish-blue">{props.data.title}</p>
+                                    <p className="text-sm text-neutral-dark-grayish-blue">
+                                        {"$" + props.data.promPrice.toFixed(2) + " x " + props.itemsInCart + " $ "} 
+                                        <b style={{color: "black"}}>{(props.data.promPrice * props.itemsInCart).toFixed(2)}</b>
+                                    </p>
+                                </div>
+                                <button className="pointer-events-auto mr-4" onClick={() => props.deleteCart()}>
+                                    <img src={deleteIcon} alt="delete" className="h-4" />
+                                </button>
+                            </div>
+                            <button  
+                                className="pointer-events-auto w-full md:w-1/1 md:mb-0 flex justify-center items-center py-2 mb-2 rounded-lg bg-orange-default hover:shadow-[0px_5px_20px_5px_#ffd4b3]"
+                            >
+                                <p className="font-bold text-white">Checkout</p>
+                            </button>
+                        </div>
+                    }
         </div>
         
     )

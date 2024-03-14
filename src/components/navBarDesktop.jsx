@@ -16,18 +16,28 @@ function NavBarDesktop(props) {
     console.log(showCart);
    
     return(
-        <div className="w-auto py-6 px-4 flex items-center justify-between bg-white border-b">
-            <div className="flex items-center">
+        <div className="w-auto h-20 px-4 flex items-center justify-between bg-white border-b">
+            <div className="flex items-center h-full">
                 <a href="/">
                     <img src={LogoImg} alt="logo" className="h-5"/>
                 </a>
-                <nav>
-                    <ul className="ml-8 flex">
-                        <li className="mx-4"><a href="#"><h3 className="text-slate-500">Collections</h3></a></li>
-                        <li className="mx-4"><a href="#"><h3 className="text-slate-500">Men</h3></a></li>
-                        <li className="mx-4"><a href="#"><h3 className="text-slate-500">Women</h3></a></li>
-                        <li className="mx-4"><a href="#"><h3 className="text-slate-500">About</h3></a></li>
-                        <li className="mx-4"><a href="#"><h3 className="text-slate-500">Contact</h3></a></li>
+                <nav className="h-full">
+                    <ul className="ml-8 flex h-full">
+                        <li className="mx-4 flex items-center h-full hover:border-b-2 border-orange-default">
+                            <a href="#"><h3 className="text-slate-500">Collections</h3></a>
+                        </li>
+                        <li className="mx-4 flex items-center h-full hover:border-b-2 border-orange-default">
+                            <a href="#"><h3 className="text-slate-500">Men</h3></a>
+                        </li>
+                        <li className="mx-4 flex items-center h-full hover:border-b-2 border-orange-default">
+                            <a href="#"><h3 className="text-slate-500">Women</h3></a>
+                        </li>
+                        <li className="mx-4 flex items-center h-full hover:border-b-2 border-orange-default">
+                            <a href="#"><h3 className="text-slate-500">About</h3></a>
+                        </li>
+                        <li className="mx-4 flex items-center h-full hover:border-b-2 border-orange-default">
+                            <a href="#"><h3 className="text-slate-500">Contact</h3></a>
+                        </li>
                     </ul>
                 </nav>
 

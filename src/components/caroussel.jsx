@@ -35,8 +35,8 @@ function Caroussel(props) {
     return(
         <div className="md:mt-8 md:max-w-md md:p-8">
             {mobile && (
-                <div className="w-screen relative z-0">
-                    <img src={imgShownPath} alt={`Product ${imgIndex + 1}`}/>
+                <div className="w-screen relative z-0 max-h-96 overflow-hidden">
+                    <img src={imgShownPath} alt={`Product ${imgIndex + 1}`} className="object-cover"/>
                     <button onClick={prevIndex} className="absolute top-1/2 left-4 w-12 h-12 text-center bg-white rounded-full" >
                         <img src={previousIcon} className="m-auto" alt="Previous"/>
                     </button>
