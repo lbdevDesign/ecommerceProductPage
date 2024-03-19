@@ -9,37 +9,37 @@ const productData = {
     img: [
         {
             id: 1,
-            path: "/assets/image-product-1.jpg"
+            path: "%PUBLIC_URL%/assets/image-product-1.jpg"
         },
         {
             id: 2,
-            path: "/assets/image-product-2.jpg"
+            path: "%PUBLIC_URL%/assets/image-product-2.jpg"
         },
         {
             id: 3,
-            path: "/assets/image-product-3.jpg"
+            path: "%PUBLIC_URL%/assets/image-product-3.jpg"
         },
         {
             id: 4,
-            path: "/assets/image-product-4.jpg"
+            path: "%PUBLIC_URL%/assets/image-product-4.jpg"
         }
     ],
     thumbnail: [
         {
             id: 1,
-            path: "/assets/image-product-1-thumbnail.jpg"
+            path: "%PUBLIC_URL%/assets/image-product-1-thumbnail.jpg"
         },
         {
             id: 2,
-            path: "/assets/image-product-2-thumbnail.jpg"
+            path: "%PUBLIC_URL%/assets/image-product-2-thumbnail.jpg"
         },
         {
             id: 3,
-            path: "/assets/image-product-3-thumbnail.jpg"
+            path: "%PUBLIC_URL%/assets/image-product-3-thumbnail.jpg"
         },
         {
             id: 4,
-            path: "/assets/image-product-4-thumbnail.jpg"
+            path: "%PUBLIC_URL%/assets/image-product-4-thumbnail.jpg"
         }
     ]
 }
