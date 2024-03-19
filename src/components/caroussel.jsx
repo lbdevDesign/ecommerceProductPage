@@ -4,13 +4,23 @@ import { useMediaQuery } from "@mui/material";
 //assets
 import nextIcon from "../assets/icon-next.svg";
 import previousIcon from "../assets/icon-previous.svg";
+import img1 from "../assets/productAssets/image-product-1.jpg";
+import img2 from "../assets/productAssets/image-product-2.jpg";
+import img3 from "../assets/productAssets/image-product-3.jpg";
+import img4 from "../assets/productAssets/image-product-4.jpg";
+import thumb1 from "../assets/productAssets/image-product-1-thumbnail.jpg";
+import thumb2 from "../assets/productAssets/image-product-2-thumbnail.jpg";
+import thumb3 from "../assets/productAssets/image-product-3-thumbnail.jpg";
+import thumb4 from "../assets/productAssets/image-product-4-thumbnail.jpg";
 
 function Caroussel(props) {
     const mobile = useMediaQuery('(max-width:768px)');
     const desktop = useMediaQuery('(min-width:768px)');
+    const images = [img1, img2, img3, img4]
+    const thumbnails = [thumb1, thumb2, thumb3, thumb4]
 
     const [imgIndex, setImgIndex] = useState(0);
-    let imgShownPath = props.data.img[imgIndex].path
+    let imgShownPath = images[imgIndex];
 
     function nextIndex() {
             if (imgIndex === props.data.img.length - 1) {
@@ -51,23 +61,23 @@ function Caroussel(props) {
                         <img src={imgShownPath} alt={`Product ${imgIndex + 1}`} className="rounded-2xl" />
                     </button>
                     <div className="mt-3 flex">
-                        {props.data.img.map((button, index) => {
+                        {thumbnails.map((button, index) => {
                             if (index === imgIndex) {
                                 return (
                                     <button 
-                                        key={button.id} 
+                                        key={thumbnails.index} 
                                         className="w-full rounded-lg m-3 border-2 border-orange-default" 
                                         onClick={() => clickIndex(index)}>
-                                            <img src={button.path} className="opacity-50"/>
+                                            <img src={thumbnails[index]} className="opacity-50"/>
                                     </button>
                                 )
                             } else {
                                 return (
                                     <button 
-                                        key={button.id} 
+                                        key={thumbnails.index} 
                                         className="w-full m-3 rounded-lg" 
                                         onClick={() => clickIndex(index)}>
-                                            <img src={button.path} className="rounded-lg"/>
+                                            <img src={thumbnails[index]} className="rounded-lg"/>
                                     </button>
                                 )
                             }

@@ -7,6 +7,7 @@ import CartIcon from '../assets/icon-cart.svg';
 import AvatarImg from '../assets/image-avatar.png';
 import CloseIcon from '../assets/icon-close.svg';
 import deleteIcon from '../assets/icon-delete.svg';
+import img1 from "../assets/productAssets/image-product-1.jpg";
 
 function NavBarMobile(props) {
     const [showMenu, setShowMenu] = useState(false);
@@ -67,7 +68,7 @@ function NavBarMobile(props) {
                         <div className="absolute z-10 top-16 left-1/2 -translate-x-1/2 pointer-events-none bg-white rounded-lg w-11/12 p-4 shadow-[rgba(0,_0,_0,_0.25)_0px_25px_50px_-12px] ">
                             <h3 className="font-semibold text-sm pb-4 mb-4 w-full border-b">Cart</h3>
                             <div className="flex items-center mb-4">
-                                <img src={props.data.img[0].path} alt="product" className="h-10 rounded mr-2" />
+                                <img src={img1} alt="product" className="h-10 rounded mr-2" />
                                 <div className="mr-auto">
                                     <p className="text-xs capitalize text-neutral-dark-grayish-blue">{props.data.title}</p>
                                     <p className="text-sm text-neutral-dark-grayish-blue">

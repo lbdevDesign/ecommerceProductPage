@@ -4,10 +4,20 @@ import React, { useState } from "react";
 import nextIcon from "../assets/icon-next.svg";
 import previousIcon from "../assets/icon-previous.svg";
 import closeIcon from "../assets/icon-close.svg";
+import img1 from "../assets/productAssets/image-product-1.jpg";
+import img2 from "../assets/productAssets/image-product-2.jpg";
+import img3 from "../assets/productAssets/image-product-3.jpg";
+import img4 from "../assets/productAssets/image-product-4.jpg";
+import thumb1 from "../assets/productAssets/image-product-1-thumbnail.jpg";
+import thumb2 from "../assets/productAssets/image-product-2-thumbnail.jpg";
+import thumb3 from "../assets/productAssets/image-product-3-thumbnail.jpg";
+import thumb4 from "../assets/productAssets/image-product-4-thumbnail.jpg";
 
 function Lightbox(props) {
     const [lightIndex, setLightIndex] = useState(0);
-    let lightShownPath = props.data.img[lightIndex].path
+    const images = [img1, img2, img3, img4]
+    const thumbnails = [thumb1, thumb2, thumb3, thumb4]
+    let lightShown = images[lightIndex]
 
     function nextIndex() {
             if (lightIndex === props.data.img.length - 1) {
@@ -38,7 +48,7 @@ function Lightbox(props) {
                     <button className="absolute right-0 -top-11" onClick={props.showLightbox}>
                         <img src={closeIcon} alt="close" />
                     </button>
-                    <img src={lightShownPath} alt={`Product ${lightIndex + 1}`} className="rounded-xl"/>
+                    <img src={lightShown} alt={`Product ${lightIndex + 1}`} className="rounded-xl"/>
                     <button onClick={prevIndex} className="absolute top-1/2 -left-6 w-12 h-12 text-center bg-white rounded-full" >
                         <img src={previousIcon} className="m-auto" alt="Previous"/>
                     </button>
@@ -47,23 +57,23 @@ function Lightbox(props) {
                     </button>
                 </div>
                 <div className="mt-3 flex z-10">
-                    {props.data.img.map((button, index) => {
+                    {thumbnails.map((button, index) => {
                         if (index === lightIndex) {
                             return (
                                 <button 
-                                    key={button.id} 
+                                    key={thumbnails.index} 
                                     className="w-full rounded-lg m-3 border-2 border-orange-default" 
                                     onClick={() => clickIndex(index)}>
-                                        <img src={button.path} className="opacity-50"/>
+                                        <img src={thumbnails[index]} className="opacity-50"/>
                                 </button>
                             )
                         } else {
                             return (
                                 <button 
-                                    key={button.id} 
+                                    key={thumbnails.index} 
                                     className="w-full m-3 rounded-lg" 
                                     onClick={() => clickIndex(index)}>
-                                        <img src={button.path} className="rounded-lg"/>
+                                        <img src={thumbnails[index]} className="rounded-lg"/>
                                 </button>
                             )
                         }
